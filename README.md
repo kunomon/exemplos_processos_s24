@@ -28,3 +28,38 @@ public class Main {
     }
 }
 ```
+
+## exemplo de override
+```
+class Animal {
+    void fazerSom() {
+        System.out.println("O animal faz um som");
+    }
+}
+
+class Cachorro extends Animal {
+    @Override
+    void fazerSom() {
+        System.out.println("O cachorro late");
+    }
+}
+
+class Gato extends Animal {
+    @Override
+    void fazerSom() {
+        System.out.println("O gato mia");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal meuAnimal = new Animal();
+        Animal meuCachorro = new Cachorro();
+        Animal meuGato = new Gato();
+
+        meuAnimal.fazerSom(); // Chama fazerSom() da classe Animal
+        meuCachorro.fazerSom(); // Chama fazerSom() da classe Cachorro
+        meuGato.fazerSom(); // Chama fazerSom() da classe Gato
+    }
+}
+```
